@@ -13,7 +13,8 @@
     <div class="eight wide column">
       <div class="ui segment">
         <h3><a href="/posts/<%= post._id %>"><%= post.title %></a></h3>
-        <pre><%- post.content %></pre><!-- 我们用了 <%- post.content %>，而不是 <%= post.content %>，因为 post.content 是 markdown 转换成的 html 字符串。 -->
+        <pre><%- post.content %></pre>
+        <!-- 我们用了 <%- post.content %>，而不是 <%= post.content %>，因为 post.content 是 markdown 转换成的 html 字符串。 -->
         <div>
           <span class="tag"><%= post.created_at %></span>
           <span class="tag right">
@@ -30,7 +31,6 @@
                 </div>
               </div>
             <% } %>
-
           </span>
         </div>
       </div>

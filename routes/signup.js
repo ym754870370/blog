@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var sha1 = require('sha1');
+var sha1 = require('sha1');//用于加密
 var express = require('express');
 var router = express.Router();
 
@@ -12,8 +12,9 @@ router.get('/', checkNotLogin, function(req, res, next) {
   res.render('signup');
 });
 
-// POST /signup 用户注册
-router.post('/', checkNotLogin, function(req, res, next) {
+// POST /signup 用户注册 
+router.post('/', checkNotLogin, function(req, res, next) {//通过router拿到表单数据
+  console.log(req.fields);//req.fields为semantic组件自动绑定的功能
   var name = req.fields.name;
   var gender = req.fields.gender;
   var bio = req.fields.bio;

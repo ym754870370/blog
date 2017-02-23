@@ -3,7 +3,7 @@
 <div class="ui grid">
   <div class="four wide column"></div>
   <div class="eight wide column">
-    <form class="ui form segment" method="post" enctype="multipart/form-data">
+    <form class="ui form segment" method="post" enctype="multipart/form-data"><!-- multipart/form-data：文件上传 -->
       <div class="field required">
         <label>用户名</label>
         <input placeholder="用户名" type="text" name="name">
@@ -33,6 +33,7 @@
         <textarea name="bio" rows="5" v-model="user.bio"></textarea>
       </div>
       <input type="submit" class="ui button fluid" value="注册">
+      <!-- 提交表单数据，由于没有声明action,则表单会直接提交到当前路由 -->
     </div>
   </form>
 </div>

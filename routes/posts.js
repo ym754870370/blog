@@ -12,7 +12,7 @@ var checkLogin = require('../middlewares/check').checkLogin;//检查用户是否
 //   res.render('posts');
 // });
 router.get('/', function(req, res, next) {
-  var author = req.query.author;
+  var author = req.query.author;//req.query 查询字符串参数属性
 
   PostModel.getPosts(author)
     .then(function (posts) {

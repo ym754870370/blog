@@ -3,7 +3,7 @@ var express = require('express');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);//将 session 存储于 mongodb，结合 express-session 使用
 var flash = require('connect-flash');//基于session
-var config = require('config-lite');
+var config = require('config-lite');//自动读取config中的配置文件
 var routes = require('./routes');
 var pkg = require('./package');
 
@@ -38,7 +38,7 @@ app.use(session({
 
 
 // flash 中间件，用来显示通知
-app.use(flash());
+app.use(flash());//页面通知
 
 
 
