@@ -54,7 +54,7 @@ module.exports = {
   getPostById: function getPostById(postId) {
     return Post
       .findOne({ _id: postId })
-      .populate({ path: 'author', model: 'User' })
+      .populate({ path: 'author', model: 'User' })//指定关联字段的 model，如果没有指定就会使用Schema的ref. 
       .addCreatedAt()
       .addCommentsCount()
       .contentToHtml()
